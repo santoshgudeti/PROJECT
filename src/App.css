@@ -1,0 +1,52 @@
+.APPA {
+  overflow-y: auto;
+  height: 100vh;
+  background: linear-gradient(138deg, rgb(255, 156, 156), rgb(255, 0, 255), rgb(169, 67, 241), rgb(81, 81, 232));
+  position: relative;
+}
+.text-animate {
+  font-family: 'Cinzel', serif;
+  font-weight: 520;
+  font-size: 3.5rem; /* Bold and large text for impact */
+  text-transform: uppercase;
+  position: absolute;
+  width: 950px;
+  text-decoration: underline;
+  text-decoration-color: rgb(104, 2, 2);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeInOut 10s infinite ease-in-out; /* Adjust duration here */
+  
+  color: rgb(82, 3, 59);
+  letter-spacing: 0.3em;
+  text-align: center;
+  pointer-events: none; /* Prevent blocking interactions with buttons */
+  z-index: 1;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0; /* Text is invisible */
+  }
+  20% {
+    opacity: 1; /* Text fades in */
+  }
+  90% {
+    opacity: 1; /* Text remains fully visible */
+  }
+  100% {
+    opacity: 0; /* Text fades out */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .text-animate {
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+  }
+}

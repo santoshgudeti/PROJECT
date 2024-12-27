@@ -1,0 +1,225 @@
+.bullet-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.more-link,
+.less-link {
+  color: #007bff;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.email-column {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.rd2 th,
+.rd2 td {
+  vertical-align: middle;
+}
+
+/* General table styling */
+/* Base alert styles */
+.alert {
+  position: fixed;
+  top: 10px;
+  right: -300px; /* Initially hidden off-screen */
+  padding: 10px 20px;
+  background-color: #f44336; /* Red background for alert */
+  color: white;
+  border-radius: 5px;
+  z-index: 1000;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0; /* Hidden initially */
+}
+
+/* Active alert styles */
+.alert-active {
+  right: 10px; /* Slides in from right */
+  opacity: 1; /* Fully visible */
+  animation: slideIn 1s ease-in-out, slideOut 0.5s ease-in-out 4s forwards;
+}
+
+/* Slide-in and enlarge effect */
+@keyframes slideIn {
+  0% {
+    transform: translateX(300px) scale(0.5); /* Start off-screen and small */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1); /* Fully visible and slightly enlarged */
+    opacity: 1;
+  }
+}
+
+/* Slide-out and shrink effect */
+@keyframes slideOut {
+  0% {
+    transform: translateX(0) scale(1); /* Fully visible */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(300px) scale(0.5); /* Slide out and shrink */
+    opacity: 0;
+  }
+}
+
+
+.responsedisplay {
+  margin: 15px;
+  padding: 10px;
+}
+
+.responsedisplay h3 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+  color:rgb(0, 0, 0);
+
+  
+  text-decoration: underline;
+text-decoration-color: #000000;
+text-underline-offset: 8px; 
+
+}
+
+/* Make the table responsive */
+.table-responsive.rd1 {
+  overflow-x: auto;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Table styling */
+.rd2 {
+  width: 100%;
+  border-collapse: collapse; /* Ensures borders between cells */
+  border: 1px solid #ddd; /* Adds border to the table */
+}
+
+.rd2 th,
+.rd2 td {
+  padding: 12px 10px;
+  text-align: left;
+  font-size: 14px;
+  border: 2px solid #000000; /* Add borders to table cells */
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  background: transparent;
+  color:rgb(255, 251, 251);
+  font-weight: bold;
+
+
+}
+.rd2>tbody>tr:hover>* {
+  --bs-table-color-state: var(--bs-table-hover-color);
+  --bs-table-bg-state: #134493;
+  color:white;
+}
+
+.rd2 th {
+  background-color: #0d053e;
+  color: white;
+  font-weight: bold;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid black;
+
+  position: sticky;
+  top: 0; /* Fix the header to the top of the container */
+  z-index: 1; /* Ensure the header is above the content when scrolling */
+
+}
+
+/* Table row background color on hover */
+
+/* Column specific adjustments */
+.rd2 td:nth-child(6), /* Skills */
+.rd2 td:nth-child(7), /* Designation */
+.rd2 td:nth-child(8), /* Degree */
+.rd2 td:nth-child(9) { /* Company Names */
+  max-width: 300px; /* Increased space for columns with more text */
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.rd2 td:nth-child(1),
+.rd2 td:nth-child(2),
+.rd2 td:nth-child(3),
+.rd2 td:nth-child(4),
+.rd2 td:nth-child(5),
+.rd2 td:nth-child(10),
+.rd2 td:nth-child(11) { /* Smaller space for these columns */
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* Matching Percentage and Resume columns */
+.rd2 td:nth-child(10) {
+  max-width: 120px;
+}
+
+.rd2 td:nth-child(11) {
+  text-align: center;
+  max-width: 150px;
+}
+
+/* Links inside the table */
+.rd2 td a {
+  color: #ffffff;
+  border-color: #000000;
+  border: 1px solid black;
+  border:2px  rgb(255, 236, 236);
+  box-shadow: 3px 3px 3px rgb(12, 4, 4);
+  border-radius:20px;
+  text-decoration: none;
+  padding: 10px;
+  padding-right:20px;
+  padding-left:20px;
+
+  background-color: rgb(59, 68, 184);
+}
+
+
+.rd2 td a:hover {
+ 
+  box-shadow: 3px 3px 3px rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  color:white;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .rd2 th, .rd2 td {
+    font-size: 12px;
+    padding: 8px 5px;
+  }
+
+  .responsedisplay h3 {
+    font-size: 18px;
+  }
+
+  /* Reduce space for smaller screens */
+  .rd2 td:nth-child(6),
+  .rd2 td:nth-child(7),
+  .rd2 td:nth-child(8),
+  .rd2 td:nth-child(9) {
+    max-width: 180px;
+  }
+}
